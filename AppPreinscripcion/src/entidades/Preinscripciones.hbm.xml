@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 15 feb 2022 8:43:18 by Hibernate Tools 5.4.32.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="gregorio" dynamic-insert="false" dynamic-update="false" mutable="true" name="entidades.Preinscripciones" optimistic-lock="none" polymorphism="implicit" select-before-update="false" table="preinscripciones">
+        <id name="dni" type="string">
+            <column length="9" name="DNI"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="entidades.Titulos" embed-xml="true" fetch="select" insert="true" name="titulos" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="3" name="CODTITULO" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="nombre" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="NOMBRE" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="apellidos" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="APELLIDOS" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="fecha" optimistic-lock="true" type="string" unique="false">
+            <column length="20" name="FECHA" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
